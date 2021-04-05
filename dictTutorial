@@ -1,0 +1,48 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Mar 30 01:03:51 2021
+
+@author: christianbrown
+"""
+
+country_codes = {
+    'kenya':'ka',
+    'tanzania':'tz',
+    'uganda':'ug',
+    'rwanda':'rw',
+    'burundi':'brn'
+    }
+if country_codes:
+    print("Dictionary is not empty")
+else:
+    print('Dictionay is empty')
+#Deleting the key-value pairs
+del country_codes['burundi']
+#country_codes.pop('rwanda')
+abc = country_codes.get('rwanda')
+#Iterating through a dictionary
+for key, vals in country_codes.items():
+    print(f'{key.title()}: {vals}')
+    
+#Exctracting keys and values
+for vals in country_codes.values():
+    print(f'Value: {vals}')
+for keys in country_codes.keys():
+    print(f'Key: {keys.title()}')
+#
+#Counting the numbers of words using a dictionary
+sententence = '''The Python Standard Library already contains the counting functionality that we imple-
+mented using the dictionary and the loop in lines 10–14 The module collections con-
+tains the type Counter which receives an iterable and summarizes its elements. Let’s
+reimplement the preceding script in fewer lines of code with Counter'''
+##
+wordCounter = {}
+for word in sententence.lower().split():
+    if word in wordCounter:
+        wordCounter[word] += 1
+    else:
+        wordCounter[word] = 1
+print(f'\n{"WORD":<20}COUNTER')
+for iKey, iVals in wordCounter.items():
+    print(f'{iKey:<20} {iVals}')
